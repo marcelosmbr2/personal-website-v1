@@ -102,12 +102,6 @@
     "order": 4
   },
   {
-    "name": "AWS",
-    "category": "devops",
-    "icon": "//cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
-    "order": 5
-  },
-  {
     "name": "Comunicação",
     "category": "soft",
     "icon": "",

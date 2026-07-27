@@ -1,136 +1,123 @@
 [
   {
-    "name": "Portfolio V2",
+    "name": "Multi Tenancy com Banco de Dados Isolado e Subdomínio",
     "image": "/images/projects/laravel.webp",
-    "description": "Portfolio pessoal construído com Laravel 13, Inertia e React.",
+    "description": "Configuração de Laravel multi-tenant com bancos de dados por tenant e roteamento por subdomínio.",
     "technologies": [
       "Laravel",
-      "PHP",
-      "Inertia",
-      "React",
-      "Typescript"
+      "Tailwind CSS",
+      "DaisyUI",
+      "Multi-tenancy",
+      "Multi Database",
+      "Subdomain Routing",
+      "Spatie"
     ],
-    "link": "https://github.com/marcelosmbr2/personal-website-v2",
+    "link": "https://github.com/marcelosmbr2/laravel-multitenancy-multidb-subdomains",
     "status": "completed",
     "is_favorite": true,
     "order": 1
   },
   {
-    "name": "Portfolio V1",
-    "image": "/images/projects/nextjs.webp",
-    "description": "Portfolio pessoal construído com Next.js 15 e DatoCMS.",
+    "name": "Multi Tenancy com Banco de Dados Compartilhado",
+    "image": "/images/projects/laravel.webp",
+    "description": "Configuração de Laravel multi-tenant com bancos de dados compartilhado.",
     "technologies": [
-      "Next.js",
-      "DatoCMS"
+      "Laravel",
+      "Tailwind CSS",
+      "DaisyUI",
+      "Multi-tenancy",
+      "Single Database",
+      "Spatie"
     ],
-    "link": "https://github.com/Marcelosmbr2/personal-website",
+    "link": "https://github.com/marcelosmbr2/laravel-multitenancy-singledb",
     "status": "completed",
     "is_favorite": false,
     "order": 2
   },
   {
-    "name": "Symfony Framework",
-    "image": "/images/projects/symfony.webp",
-    "description": "Estudo dos fundamentos e funcionalidades do framework Symfony.",
-    "technologies": [
-      "PHP",
-      "Symfony"
-    ],
-    "link": "https://github.com/marcelosmbr2/symfony-framework",
-    "status": "in progress",
-    "is_favorite": false,
+    "name": "Servidor MCP com Laravel",
+    "image": "/images/projects/laravel.webp",
+    "description": "Estudo de servidor MCP com Laravel.",
+    "technologies": ["Laravel", "MCP Server"],
+    "link": "https://github.com/marcelosmbr2/laravel-mcp-server",
+    "status": "completed",
+    "is_favorite": true,
     "order": 3
   },
   {
-    "name": "Laravel MCP",
+    "name": "Laravel AI SDK",
     "image": "/images/projects/laravel.webp",
-    "description": "Estudo de servidor MCP com Laravel.",
+    "description": "Um laboratório de aprendizado prático para o Laravel AI SDK, com recursos como prompts, análise de arquivos, geração de imagens, TTS, transcrição, embeddings e RAG.",
     "technologies": [
-      "PHP",
       "Laravel",
-      "MCP"
+      "Inertia.js",
+      "Tailwind CSS",
+      "React",
+      "OpenAI"
     ],
-    "link": "https://github.com/marcelosmbr2/laravel-mcp",
+    "link": "https://github.com/marcelosmbr2/laravel-ai-sdk",
     "status": "completed",
-    "is_favorite": true,
+    "is_favorite": false,
     "order": 4
   },
   {
-    "name": "Infraestrutura como Código",
-    "image": "/images/projects/terraform.webp",
-    "description": "Implantação de uma aplicação Laravel na AWS utilizando Terraform e Ansible",
-    "technologies": [
-      "AWS",
-      "EC2",
-      "Terraform",
-      "Ansible",
-      "Laravel"
-    ],
-    "link": "https://github.com/marcelosmbr2/iac-terraform-ansible.git",
+    "name": "Portfolio V1",
+    "image": "/images/projects/nextjs.webp",
+    "description": "Portfolio pessoal construído com Next.js e DatoCMS.",
+    "technologies": ["Next.js", "DatoCMS"],
+    "link": "https://github.com/marcelosmbr2/personal-website-v1",
     "status": "completed",
     "is_favorite": true,
     "order": 5
   },
   {
-    "name": "Laravel Queues",
-    "image": "/images/projects/laravel.webp",
-    "description": "Estudo de filas, jobs assíncronos e monitoramento com Horizon.",
-    "technologies": [
-      "PHP",
-      "Laravel",
-      "Horizon",
-      "Queues",
-      "Redis",
-      "Mailhog",
-      "Docker"
-    ],
-    "link": "https://github.com/Marcelosmbr2/laravel-queue-horizon",
-    "status": "completed",
+    "name": "Symfony Framework",
+    "image": "/images/projects/symfony.webp",
+    "description": "Estudo dos fundamentos e funcionalidades do framework Symfony.",
+    "technologies": ["PHP", "Symfony"],
+    "link": "https://github.com/marcelosmbr2/symfony-framework",
+    "status": "in progress",
     "is_favorite": false,
     "order": 6
-  },
-  {
-    "name": "Laravel Cache Telescope",
-    "image": "/images/projects/laravel.webp",
-    "description": "Estudo de cache e monitoramento com Telescope.",
-    "technologies": [
-      "PHP",
-      "Laravel",
-      "Telescope",
-      "Redis",
-      "Docker"
-    ],
-    "link": "https://github.com/Marcelosmbr2/laravel-cache-telescope",
-    "status": "completed",
-    "is_favorite": false,
-    "order": 7
-  },
-  {
-    "name": "Laravel Evolution API",
-    "image": "/images/projects/laravel.webp",
-    "description": "Enviando notificações via Whatsapp com Evolution API.",
-    "technologies": [
-      "PHP",
-      "Laravel",
-      "Evolution API",
-      "Docker"
-    ],
-    "link": "https://github.com/marcelosmbr2/laravel-evolution-api",
-    "status": "completed",
-    "is_favorite": false,
-    "order": 8
   },
   {
     "name": "Spring Framework",
     "image": "/images/projects/spring.webp",
     "description": "Estudo dos fundamentos e funcionalidades do framework Spring.",
-    "technologies": [
-      "Java",
-      "Spring"
-    ],
+    "technologies": ["Java", "Spring"],
     "link": "https://github.com/Marcelosmbr2/spring-basic",
     "status": "completed",
     "is_favorite": false,
+    "order": 7
+  },
+  {
+    "name": "API RESTful com Express.js e PrismaORM",
+    "image": "/images/projects/nodejs.webp",
+    "description": "Desenvolvimento de API com Express.js e Prisma ORM.",
+    "technologies": ["Express.js", "Prisma ORM", "Node.js", "TypeScript"],
+    "link": "https://github.com/marcelosmbr2/api-expressjs-prisma",
+    "status": "completed",
+    "is_favorite": true,
+    "order": 8
+  },
+  {
+    "name": "Integração do Stripe no Laravel",
+    "image": "/images/projects/laravel.webp",
+    "description": "Integração do Laravel com o Stripe, incluindo funcionalidades essenciais de pagamento.",
+    "technologies": ["Laravel", "Inertia.js", "React", "TypeScript", "Stripe"],
+    "link": "https://github.com/marcelosmbr2/laravel-stripe",
+    "status": "completed",
+    "is_favorite": false,
     "order": 9
+  },
+  {
+    "name": "Fundamentos de React e Next.js",
+    "image": "/images/projects/laravel.webp",
+    "description": "Aplicação para explorar os fundamentos de React e Next.js.",
+    "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    "link": "https://github.com/marcelosmbr2/react-nextjs-course",
+    "status": "completed",
+    "is_favorite": false,
+    "order": 10
   }
 ]

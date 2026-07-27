@@ -54,6 +54,7 @@ export default async function ArticlesPage(props: {
 }) {
 	const searchParams = await props.searchParams;
 	const search = searchParams?.search || "";
+	const term = search.trim().toLowerCase();
 	const category = searchParams?.category || "tecnologia";
 	const itemsPerPage = Number(searchParams?.items) || 15;
 	const sortBy = (searchParams?.sortBy || "_createdAt") as keyof Post;
@@ -72,14 +73,9 @@ export default async function ArticlesPage(props: {
 	}
 
 	const filteredPosts = allPosts.filter((post: Post) => {
-		return post.category.toLowerCase() === category.toLowerCase();
+		if (post.category.toLowerCase() !== category.toLowerCase()) return false;
+		return !term || post.name.toLowerCase().includes(term);
 	});
-
-	if (search) {
-		filteredPosts.filter((post: Post) => {
-			return post.name.toLowerCase().includes(search.toLowerCase());
-		});
-	}
 
 	filteredPosts.sort((a: Post, b: Post) => {
 		const aValue = a[sortBy];

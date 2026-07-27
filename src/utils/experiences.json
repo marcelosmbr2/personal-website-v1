@@ -3,8 +3,8 @@
     "title": "Orientador de Educação Profissional",
     "company": "Senac RS",
     "period": "03/2026 – Presente",
-    "icon": "/public/images/senac.jpg",
-    "description": "Atuo como instrutor de TI no curso Técnico em Desenvolvimento de Sistemas (TDS) e Informática Básica, sendo responsável pelo ensino de programação, desenvolvimento web e demais disciplinas da área. Além disso, estou atuando como treinador de alunos selecionados para as competições regionais promovidas pelo SENAC.",
+    "icon": "/images/senac.jpg",
+    "description": "Atuo como instrutor de TI no curso Técnico em Desenvolvimento de Sistemas (TDS) e Informática Básica, sendo responsável pelo ensino de programação, desenvolvimento web e demais disciplinas da área.",
     "technologies": [
       "Docência",
       "Informática Básica",
@@ -38,8 +38,7 @@
       "Tailwind CSS",
       "GitHub",
       "MySQL",
-      "CI/CD",
-      "Digital Ocean"
+      "CI/CD"
     ],
     "order": 2
   },
@@ -49,10 +48,7 @@
     "period": "01/2022 – 03/2024",
     "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
     "description": "Atuei como instrutor de inclusão digital para adultos em processo de requalificação profissional, ajudando pessoas a conquistarem autonomia no ambiente digital e ampliarem suas oportunidades no mercado de trabalho.",
-    "technologies": [
-      "Informática Básica",
-      "Docência"
-    ],
+    "technologies": ["Informática Básica", "Docência"],
     "order": 3
   },
   {
@@ -101,7 +97,7 @@
     "title": "Desenvolvedor PHP",
     "company": "Escola Mario Quintana",
     "period": "04/2021 – 08/2021",
-    "icon": "devicon:php",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
     "description": "Na Escola Mario Quintana, colaborei com a equipe interna de TI no desenvolvimento e expansão da plataforma de gestão de ordens de serviço da instituição. Trabalhei na construção de novos módulos dentro de uma arquitetura MVC da aplicação, implementando tanto a lógica de negócio no backend quanto as interfaces de uso no frontend. Também fui responsável pela criação de documentação técnica detalhada, garantindo a manutenibilidade e a continuidade dos módulos desenvolvidos a longo prazo.",
     "technologies": [
       "PHP",

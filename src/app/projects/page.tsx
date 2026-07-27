@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,9 +11,11 @@ interface Project {
 	name: string;
 	image: string;
 	description: string;
-	technologies: string;
+	technologies: string[];
 	link: string;
 	status: string;
+	is_favorite: boolean;
+	order: number;
 }
 
 interface SearchParams {
@@ -29,22 +29,18 @@ export default async function ArticlesPage(props: {
 }) {
 	const searchParams = await props.searchParams;
 	const search = searchParams?.search || "";
-	const status = searchParams?.status || "Completed";
+	const status = searchParams?.status || "completed";
+	const term = search.trim().toLowerCase();
 
-	const filteredProjects = allProjects.filter((project: Project) => {
-		return project.status.toLowerCase() === status.toLowerCase();
+	const displayedProjects = allProjects.filter((project: Project) => {
+		if (project.status.toLowerCase() !== status.toLowerCase()) return false;
+		if (!term) return true;
+
+		return (
+			project.name.toLowerCase().includes(term) ||
+			project.technologies.some((tech) => tech.toLowerCase().includes(term))
+		);
 	});
-
-	if (search) {
-		filteredProjects.filter((project: Project) => {
-			return (
-				project.name.toLowerCase().includes(search.toLowerCase()) ||
-				project.technologies.toLowerCase().includes(search.toLowerCase())
-			);
-		});
-	}
-
-	const displayedProjects = filteredProjects;
 
 	return (
 		<>

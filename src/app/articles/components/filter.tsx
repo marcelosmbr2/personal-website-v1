@@ -5,16 +5,6 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import * as React from "react";
 import { useDebouncedCallback } from "use-debounce";
 import { Button } from "@/components/ui/button";
-import {
-	Drawer,
-	DrawerClose,
-	DrawerContent,
-	DrawerDescription,
-	DrawerFooter,
-	DrawerHeader,
-	DrawerTitle,
-	DrawerTrigger,
-} from "@/components/ui/drawer";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -22,6 +12,16 @@ import {
 	PopoverContent,
 	PopoverTrigger,
 } from "@/components/ui/popover";
+import {
+	Sheet,
+	SheetClose,
+	SheetContent,
+	SheetDescription,
+	SheetFooter,
+	SheetHeader,
+	SheetTitle,
+	SheetTrigger,
+} from "@/components/ui/sheet";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
@@ -29,6 +29,8 @@ import { cn } from "@/lib/utils";
 type CategoryValue = "tecnologia" | "filosofia";
 type ItemsValue = "15" | "25" | "50";
 type SortByValue = "_createdAt" | "name";
+
+const FILTER_FORM_ID = "articles-filter-form";
 
 interface FilterFormProps extends React.ComponentProps<"form"> {
 	category: CategoryValue;
@@ -39,6 +41,8 @@ interface FilterFormProps extends React.ComponentProps<"form"> {
 	setSortBy: (value: SortByValue) => void;
 	handleClear: () => void;
 	handleSubmit: (e: React.FormEvent) => void;
+	/** No sheet as ações vivem no rodapé, então o form não as renderiza. */
+	showActions?: boolean;
 }
 
 export function PostsFilter() {
@@ -148,26 +152,26 @@ export function PostsFilter() {
 				className="w-full mb-4"
 				value={search}
 				onChange={handleSearchChange}
-				defaultValue={searchParams.get("search")?.toString()}
-				disabled
 			/>
 			<div className="flex items-center gap-2">
 				{isMobile ? (
-					<Drawer open={open} onOpenChange={setOpen}>
-						<DrawerTrigger asChild>
+					<Sheet open={open} onOpenChange={setOpen}>
+						<SheetTrigger asChild>
 							<Button variant="ghost">
 								<IconFilter />
 							</Button>
-						</DrawerTrigger>
-						<DrawerContent>
-							<DrawerHeader className="text-left">
-								<DrawerTitle>Filtros Avançados</DrawerTitle>
-								<DrawerDescription>
+						</SheetTrigger>
+						<SheetContent side="right" className="overflow-y-auto">
+							<SheetHeader>
+								<SheetTitle>Filtros Avançados</SheetTitle>
+								<SheetDescription>
 									Selecione os filtros para carregar os posts
-								</DrawerDescription>
-							</DrawerHeader>
+								</SheetDescription>
+							</SheetHeader>
 							<FilterForm
+								id={FILTER_FORM_ID}
 								className="px-4"
+								showActions={false}
 								category={category}
 								setCategory={setCategory}
 								items={items}
@@ -177,13 +181,19 @@ export function PostsFilter() {
 								handleClear={handleClear}
 								handleSubmit={handleSubmit}
 							/>
-							<DrawerFooter className="pt-2">
-								<DrawerClose asChild>
-									<Button variant="outline">Cancelar</Button>
-								</DrawerClose>
-							</DrawerFooter>
-						</DrawerContent>
-					</Drawer>
+							<SheetFooter>
+								<Button type="submit" form={FILTER_FORM_ID}>
+									Aplicar Filtros
+								</Button>
+								<Button type="button" variant="outline" onClick={handleClear}>
+									Limpar
+								</Button>
+								<SheetClose asChild>
+									<Button variant="ghost">Cancelar</Button>
+								</SheetClose>
+							</SheetFooter>
+						</SheetContent>
+					</Sheet>
 				) : (
 					<Popover open={open} onOpenChange={setOpen}>
 						<PopoverTrigger asChild>
@@ -237,6 +247,8 @@ export function PostsFilter() {
 
 function FilterForm({
 	className,
+	id,
+	showActions = true,
 	category,
 	setCategory,
 	items,
@@ -248,6 +260,7 @@ function FilterForm({
 }: FilterFormProps) {
 	return (
 		<form
+			id={id}
 			className={cn("grid items-start gap-4", className)}
 			onSubmit={handleSubmit}
 		>
@@ -291,19 +304,21 @@ function FilterForm({
 				</ToggleGroup>
 			</div>
 
-			<div className="flex gap-2">
-				<Button type="submit" className="flex-1">
-					Aplicar Filtros
-				</Button>
-				<Button
-					type="button"
-					variant="outline"
-					onClick={handleClear}
-					className="flex-1"
-				>
-					Limpar
-				</Button>
-			</div>
+			{showActions && (
+				<div className="flex gap-2">
+					<Button type="submit" className="flex-1">
+						Aplicar Filtros
+					</Button>
+					<Button
+						type="button"
+						variant="outline"
+						onClick={handleClear}
+						className="flex-1"
+					>
+						Limpar
+					</Button>
+				</div>
+			)}
 		</form>
 	);
 }
